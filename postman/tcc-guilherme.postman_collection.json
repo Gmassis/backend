@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "77def9e4-20b6-410a-9bb4-9463db0c797a",
+		"name": "tcc-guilherme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11789564"
+	},
+	"item": [
+		{
+			"name": "/v1/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/v1/health",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Loran Henrique Teixeira\",\n    \"email\": \"loranteixeira@test.com\",\n    \"pass\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/v1/register",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"loranteixeira@test.com\",\n    \"pass\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/v1/login",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/v1/product?is_featured=true",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"product"
+					],
+					"query": [
+						{
+							"key": "is_featured",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUser\": \"66889da70419ed3845199dd4\",\n    \"idProduct\": \"668adc20ff58d98fec79e8d8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/v1/cart",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/v1/cart?idUser=66889da70419ed3845199dd4",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "idUser",
+							"value": "66889da70419ed3845199dd4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/v1/cart?idUser=66889da70419ed3845199dd4&idProduct=668adc20ff58d98fec79e8d8",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "idUser",
+							"value": "66889da70419ed3845199dd4"
+						},
+						{
+							"key": "idProduct",
+							"value": "668adc20ff58d98fec79e8d8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:4444",
+			"type": "string"
+		}
+	]
+}
